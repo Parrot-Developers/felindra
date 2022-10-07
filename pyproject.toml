@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "parrot-felindra"
+version = "0.0.0" # This parameter is overridden by Alchemy
+description = "Parrot Media Signature Verifier tool"
+authors = ["Mathieu Le Mauff <mathieu.lemauff@parrot.com>"]
+readme = "README.md"
+license = "BSD-3-Clause"
+packages = [
+    { from="src", include = "felindra/" },
+    { from="src", include = "felindra/*.py" },
+]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: BSD License",
+  "License :: OSI Approved",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: C",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python",
+  "Topic :: Scientific/Engineering"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "*"
+cryptography = "*"
+pycryptodome = "*"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+flake8 = "*"
+mypi = "*"
+
+[project.urls]
+homepage = "https://developer.parrot.com/"
+documentation = "https://developer.parrot.com/docs/groundsdk-tools/photo-signature.html#felindra"
+repository = "https://github.com/Parrot-Developers/felindra"
+
+[tool.poetry.scripts]
+felindra = 'felindra.felindra_main:main'
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+)/
+'''
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
