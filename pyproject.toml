@@ -29,7 +29,7 @@ classifiers = [
 python = "^3.8"
 requests = "*"
 cryptography = "*"
-pycryptodome = "*"
+pycryptodome = ">=3.13"
 
 [tool.poetry.dev-dependencies]
 black = "*"
